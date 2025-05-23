@@ -1,0 +1,102 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<mes:Structure xmlns:com="http://www.sdmx.org/resources/sdmxml/schemas/v2_1/common" xmlns:mes="http://www.sdmx.org/resources/sdmxml/schemas/v2_1/message" xmlns:str="http://www.sdmx.org/resources/sdmxml/schemas/v2_1/structure">
+  <mes:Header>
+    <mes:ID>DF_PACCOMTRADE</mes:ID>
+    <mes:Test>false</mes:Test>
+    <mes:Prepared>2020-05-15T23:59:59.000Z</mes:Prepared>
+    <mes:Sender id="SPC"/>
+    <mes:Receiver id="UKN"/>
+  </mes:Header>
+  <mes:Structures>
+    <str:Codelists>
+      <str:Codelist agencyID="SPC" id="CL_PACCOMTRADE_UNIT_MEASURE" isFinal="false" urn="urn:sdmx:org.sdmx.infomodel.codelist.Codelist=SPC:CL_PACCOMTRADE_UNIT_MEASURE(1.0)" version="1.0">
+        <com:Name xml:lang="en">Codelist for PACCOMTRADE units of measure</com:Name>
+        <com:Name xml:lang="fr">Liste de codes pour les unités de mesure PACCOMTRADE</com:Name>
+        <str:Code id="NZD" urn="urn:sdmx:org.sdmx.infomodel.codelist.Code=SPC:CL_PACCOMTRADE_UNIT_MEASURE(1.0).NZD">
+          <com:Name xml:lang="en">New Zealand Dollar</com:Name>
+          <com:Name xml:lang="fr">Dollar néo-zélandais</com:Name>
+        </str:Code>
+        <str:Code id="FJD" urn="urn:sdmx:org.sdmx.infomodel.codelist.Code=SPC:CL_PACCOMTRADE_UNIT_MEASURE(1.0).FJD">
+          <com:Name xml:lang="en">Fiji Dollar</com:Name>
+          <com:Name xml:lang="fr">Dollar fidjien</com:Name>
+        </str:Code>
+        <str:Code id="AUD" urn="urn:sdmx:org.sdmx.infomodel.codelist.Code=SPC:CL_PACCOMTRADE_UNIT_MEASURE(1.0).AUD">
+          <com:Name xml:lang="en">Australian Dollar</com:Name>
+          <com:Name xml:lang="fr">Dollar australien</com:Name>
+        </str:Code>
+        <str:Code id="XPF" urn="urn:sdmx:org.sdmx.infomodel.codelist.Code=SPC:CL_PACCOMTRADE_UNIT_MEASURE(1.0).XPF">
+          <com:Name xml:lang="en">CFP Franc</com:Name>
+          <com:Name xml:lang="fr">Franc CFP</com:Name>
+        </str:Code>
+        <str:Code id="PGK" urn="urn:sdmx:org.sdmx.infomodel.codelist.Code=SPC:CL_PACCOMTRADE_UNIT_MEASURE(1.0).PGK">
+          <com:Name xml:lang="en">Kina</com:Name>
+          <com:Name xml:lang="fr">Kina</com:Name>
+        </str:Code>
+        <str:Code id="SBD" urn="urn:sdmx:org.sdmx.infomodel.codelist.Code=SPC:CL_PACCOMTRADE_UNIT_MEASURE(1.0).SBD">
+          <com:Name xml:lang="en">Solomon Islands Dollar</com:Name>
+          <com:Name xml:lang="fr">Dollar des Îles Salomon</com:Name>
+        </str:Code>
+        <str:Code id="TOP" urn="urn:sdmx:org.sdmx.infomodel.codelist.Code=SPC:CL_PACCOMTRADE_UNIT_MEASURE(1.0).TOP">
+          <com:Name xml:lang="en">Pa’anga</com:Name>
+          <com:Name xml:lang="fr">Pa’anga</com:Name>
+        </str:Code>
+        <str:Code id="VUV" urn="urn:sdmx:org.sdmx.infomodel.codelist.Code=SPC:CL_PACCOMTRADE_UNIT_MEASURE(1.0).VUV">
+          <com:Name xml:lang="en">Vatu</com:Name>
+          <com:Name xml:lang="fr">Vatu</com:Name>
+        </str:Code>
+        <str:Code id="WST" urn="urn:sdmx:org.sdmx.infomodel.codelist.Code=SPC:CL_PACCOMTRADE_UNIT_MEASURE(1.0).WST">
+          <com:Name xml:lang="en">Tala</com:Name>
+          <com:Name xml:lang="fr">Tala</com:Name>
+        </str:Code>
+        <str:Code id="USD" urn="urn:sdmx:org.sdmx.infomodel.codelist.Code=SPC:CL_PACCOMTRADE_UNIT_MEASURE(1.0).USD">
+          <com:Name xml:lang="en">USD</com:Name>
+          <com:Name xml:lang="fr">USD</com:Name>
+        </str:Code>
+        <str:Code id="CTM" urn="urn:sdmx:org.sdmx.infomodel.codelist.Code=SPC:CL_PACCOMTRADE_UNIT_MEASURE(1.0).CTM">
+          <com:Name xml:lang="en">Carat</com:Name>
+          <com:Name xml:lang="fr">Carat</com:Name>
+        </str:Code>
+        <str:Code id="KGM" urn="urn:sdmx:org.sdmx.infomodel.codelist.Code=SPC:CL_PACCOMTRADE_UNIT_MEASURE(1.0).KGM">
+          <com:Name xml:lang="en">Kilogram</com:Name>
+          <com:Name xml:lang="fr">Kilogramme</com:Name>
+        </str:Code>
+        <str:Code id="LTR" urn="urn:sdmx:org.sdmx.infomodel.codelist.Code=SPC:CL_PACCOMTRADE_UNIT_MEASURE(1.0).LTR">
+          <com:Name xml:lang="en">Litre</com:Name>
+          <com:Name xml:lang="fr">Litre</com:Name>
+        </str:Code>
+        <str:Code id="MIL" urn="urn:sdmx:org.sdmx.infomodel.codelist.Code=SPC:CL_PACCOMTRADE_UNIT_MEASURE(1.0).MIL">
+          <com:Name xml:lang="en">Thousand</com:Name>
+          <com:Name xml:lang="fr">Millier</com:Name>
+        </str:Code>
+        <str:Code id="MTK" urn="urn:sdmx:org.sdmx.infomodel.codelist.Code=SPC:CL_PACCOMTRADE_UNIT_MEASURE(1.0).MTK">
+          <com:Name xml:lang="en">Square metre</com:Name>
+          <com:Name xml:lang="fr">Mètre carré</com:Name>
+        </str:Code>
+        <str:Code id="MTQ" urn="urn:sdmx:org.sdmx.infomodel.codelist.Code=SPC:CL_PACCOMTRADE_UNIT_MEASURE(1.0).MTQ">
+          <com:Name xml:lang="en">Cubic metre</com:Name>
+          <com:Name xml:lang="fr">Mètre cube</com:Name>
+        </str:Code>
+        <str:Code id="MTR" urn="urn:sdmx:org.sdmx.infomodel.codelist.Code=SPC:CL_PACCOMTRADE_UNIT_MEASURE(1.0).MTR">
+          <com:Name xml:lang="en">Metre</com:Name>
+          <com:Name xml:lang="fr">Mètre</com:Name>
+        </str:Code>
+        <str:Code id="NMB" urn="urn:sdmx:org.sdmx.infomodel.codelist.Code=SPC:CL_PACCOMTRADE_UNIT_MEASURE(1.0).NMB">
+          <com:Name xml:lang="en">Number</com:Name>
+          <com:Name xml:lang="fr">Nombre</com:Name>
+        </str:Code>
+        <str:Code id="NMP" urn="urn:sdmx:org.sdmx.infomodel.codelist.Code=SPC:CL_PACCOMTRADE_UNIT_MEASURE(1.0).NMP">
+          <com:Name xml:lang="en">Number of packs</com:Name>
+          <com:Name xml:lang="fr">Nombre de paquets</com:Name>
+        </str:Code>
+        <str:Code id="NPR" urn="urn:sdmx:org.sdmx.infomodel.codelist.Code=SPC:CL_PACCOMTRADE_UNIT_MEASURE(1.0).NPR">
+          <com:Name xml:lang="en">Number of pairs</com:Name>
+          <com:Name xml:lang="fr">Nombre de paires</com:Name>
+        </str:Code>
+        <str:Code id="STK" urn="urn:sdmx:org.sdmx.infomodel.codelist.Code=SPC:CL_PACCOMTRADE_UNIT_MEASURE(1.0).STK">
+          <com:Name xml:lang="en">Stick</com:Name>
+          <com:Name xml:lang="fr">Bâton</com:Name>
+        </str:Code>
+      </str:Codelist>
+    </str:Codelists>
+  </mes:Structures>
+</mes:Structure>

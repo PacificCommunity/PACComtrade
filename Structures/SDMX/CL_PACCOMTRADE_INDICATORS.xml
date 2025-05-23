@@ -1,0 +1,73 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<mes:Structure xmlns:com="http://www.sdmx.org/resources/sdmxml/schemas/v2_1/common" xmlns:mes="http://www.sdmx.org/resources/sdmxml/schemas/v2_1/message" xmlns:str="http://www.sdmx.org/resources/sdmxml/schemas/v2_1/structure">
+  <mes:Header>
+    <mes:ID>DF_PACCOMTRADE</mes:ID>
+    <mes:Test>false</mes:Test>
+    <mes:Prepared>2020-05-15T23:59:59.000Z</mes:Prepared>
+    <mes:Sender id="SPC"/>
+    <mes:Receiver id="UKN"/>
+  </mes:Header>
+  <mes:Structures>
+    <str:Codelists>
+      <str:Codelist agencyID="SPC" id="CL_PACCOMTRADE_INDICATORS" isFinal="false" urn="urn:sdmx:org.sdmx.infomodel.codelist.Codelist=SPC:CL_PACCOMTRADE_INDICATORS(1.0)" version="1.0">
+        <com:Name xml:lang="en">Codelist for PACCOMTRADE indicators</com:Name>
+        <com:Name xml:lang="fr">Liste de codes pour les indicateurs PACCOMTRADE</com:Name>
+        <str:Code id="VALUE" urn="urn:sdmx:org.sdmx.infomodel.codelist.Code=SPC:CL_PACCOMTRADE_INDICATORS(1.0).VALUE">
+          <com:Annotations>
+            <com:Annotation>
+              <com:AnnotationType>ORDER</com:AnnotationType>
+              <com:AnnotationText xml:lang="en"/>
+              <com:AnnotationText xml:lang="fr"/>
+            </com:Annotation>
+          </com:Annotations>
+          <com:Name xml:lang="en">Value</com:Name>
+          <com:Name xml:lang="fr">Valeur</com:Name>
+        </str:Code>
+        <str:Code id="INSURANCE_PAID" urn="urn:sdmx:org.sdmx.infomodel.codelist.Code=SPC:CL_PACCOMTRADE_INDICATORS(1.0).INSURANCE_PAID">
+          <com:Annotations>
+            <com:Annotation>
+              <com:AnnotationType>ORDER</com:AnnotationType>
+              <com:AnnotationText xml:lang="en"/>
+              <com:AnnotationText xml:lang="fr"/>
+            </com:Annotation>
+          </com:Annotations>
+          <com:Name xml:lang="en">Insurance paid</com:Name>
+          <com:Name xml:lang="fr">Assurance payée</com:Name>
+        </str:Code>
+        <str:Code id="FREIGHT_PAID" urn="urn:sdmx:org.sdmx.infomodel.codelist.Code=SPC:CL_PACCOMTRADE_INDICATORS(1.0).FREIGHT_PAID">
+          <com:Annotations>
+            <com:Annotation>
+              <com:AnnotationType>ORDER</com:AnnotationType>
+              <com:AnnotationText xml:lang="en"/>
+              <com:AnnotationText xml:lang="fr"/>
+            </com:Annotation>
+          </com:Annotations>
+          <com:Name xml:lang="en">Freight paid</com:Name>
+          <com:Name xml:lang="fr">Transport payé</com:Name>
+        </str:Code>
+        <str:Code id="TOTAL_AMOUNT" urn="urn:sdmx:org.sdmx.infomodel.codelist.Code=SPC:CL_PACCOMTRADE_INDICATORS(1.0).TOTAL_AMOUNT">
+          <com:Annotations>
+            <com:Annotation>
+              <com:AnnotationType>ORDER</com:AnnotationType>
+              <com:AnnotationText xml:lang="en"/>
+              <com:AnnotationText xml:lang="fr"/>
+            </com:Annotation>
+          </com:Annotations>
+          <com:Name xml:lang="en">Total amount</com:Name>
+          <com:Name xml:lang="fr">Montant total</com:Name>
+        </str:Code>
+        <str:Code id="QUANTITY" urn="urn:sdmx:org.sdmx.infomodel.codelist.Code=SPC:CL_PACCOMTRADE_INDICATORS(1.0).QUANTITY">
+          <com:Annotations>
+            <com:Annotation>
+              <com:AnnotationType>ORDER</com:AnnotationType>
+              <com:AnnotationText xml:lang="en"/>
+              <com:AnnotationText xml:lang="fr"/>
+            </com:Annotation>
+          </com:Annotations>
+          <com:Name xml:lang="en">Quanity</com:Name>
+          <com:Name xml:lang="fr">Quantité</com:Name>
+        </str:Code>
+      </str:Codelist>
+    </str:Codelists>
+  </mes:Structures>
+</mes:Structure>

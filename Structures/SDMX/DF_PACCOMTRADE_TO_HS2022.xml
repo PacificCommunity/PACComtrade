@@ -1,0 +1,45 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<mes:Structure xmlns:mes="http://www.sdmx.org/resources/sdmxml/schemas/v2_1/message" xmlns:str="http://www.sdmx.org/resources/sdmxml/schemas/v2_1/structure" xmlns:com="http://www.sdmx.org/resources/sdmxml/schemas/v2_1/common">
+  <mes:Header>
+    <mes:ID>DF_PACCOMTRADE_TO_HS2022</mes:ID>
+    <mes:Test>false</mes:Test>
+    <mes:Prepared>2020-05-15T23:59:59.000Z</mes:Prepared>
+    <mes:Sender id="SPC"/>
+    <mes:Receiver id="UKN"/>
+  </mes:Header>
+  <mes:Structures>
+    <str:Dataflows>
+      <str:Dataflow id="DF_PACCOMTRADE_TO_HS2022" uri="" urn="urn:sdmx:org.sdmx.infomodel.datastructure.Dataflow=SPC:DF_PACCOMTRADE_TO_HS2022(1.0)" agencyID="SPC" version="1.0" isFinal="false">
+        <com:Annotations>
+          <com:Annotation>
+            <com:AnnotationTitle>COMMODITY</com:AnnotationTitle>
+            <com:AnnotationType>ROW_SECTION</com:AnnotationType>
+          </com:Annotation>
+          <com:Annotation>
+            <com:AnnotationTitle>TIME_PERIOD</com:AnnotationTitle>
+            <com:AnnotationType>LAYOUT_COLUMN</com:AnnotationType>
+          </com:Annotation>
+          <com:Annotation>
+            <com:AnnotationTitle>TRADE_FLOW</com:AnnotationTitle>
+            <com:AnnotationType>LAYOUT_ROW</com:AnnotationType>
+          </com:Annotation>
+          <com:Annotation>
+            <com:AnnotationTitle>FREQ=M,GEO_PICT=TO,INDICATOR=TOTAL_AMOUNT,COMMODITY=_T+I+II+III+IV+V+VI+VII+VIII+IX+X+XI+XII+XIII+XIV+XV+XVI+XVII+XVIII+XIX+XX+XXI+OTH+_U,TRADE_FLOW=M1+X1,INCOTERMS=_T,COUNTERPART=_T,TRANSPORT=_T,TRADE_AGREEMENT=_T,LASTNPERIODS=13</com:AnnotationTitle>
+            <com:AnnotationType>DEFAULT</com:AnnotationType>
+          </com:Annotation>
+          <com:Annotation>
+            <com:AnnotationTitle>PDH.STAT</com:AnnotationTitle>
+            <com:AnnotationType>TAGS</com:AnnotationType>
+          </com:Annotation>
+        </com:Annotations>
+        <com:Name xml:lang="en">Pacific Commodity Trade (PACComtrade) for Tonga with HS 2022</com:Name>
+        <com:Name xml:lang="fr">Commerce des marchandises du Pacifique (PACComtrade) pour Tonga en HS2022</com:Name>
+        <com:Description xml:lang="en">The Pacific Customs Commodity Trade (PACComtrade) database gives data on merchandise trade sourced from SPC member countries’ Customs Administrations. The main benefit of this database is that users have access to data on commodities up to the 6-digit Harmonised Commodity Description and Coding System (HS) level. PACComtrade database supplement IMTS release tables and together they are serving different user needs. Although a series of caveats apply, the PACComtrade database will have a timelier release than the IMTS release tables as such the Government and the businesses engaged in trade will be able to plan better.</com:Description>
+        <com:Description xml:lang="fr">La base de données Pacific Customs Commodity Trade (PACComtrade) fournit des données sur le commerce des marchandises provenant des administrations douanières des pays membres de la CPS. Le principal avantage de cette base de données est que les utilisateurs ont accès aux données sur les produits jusqu'au niveau à 6 chiffres du Système harmonisé de description et de codification des produits (SH). La base de données PACComtrade complète les tables de version IMTS et, ensemble, elles répondent aux différents besoins des utilisateurs. Bien qu'une série de mises en garde s'appliquent, la base de données PACComtrade sera publiée plus rapidement que les tableaux de publication IMTS, de sorte que le gouvernement et les entreprises engagées dans le commerce seront en mesure de mieux planifier.</com:Description>
+        <str:Structure>
+          <Ref id="DSD_PACCOMTRADE_TO_HS2022" version="1.0" agencyID="SPC" package="datastructure" class="DataStructure"/>
+        </str:Structure>
+      </str:Dataflow>
+    </str:Dataflows>
+  </mes:Structures>
+</mes:Structure>

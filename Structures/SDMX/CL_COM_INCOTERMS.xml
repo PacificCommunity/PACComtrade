@@ -1,0 +1,161 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<mes:Structure xmlns:com="http://www.sdmx.org/resources/sdmxml/schemas/v2_1/common" xmlns:mes="http://www.sdmx.org/resources/sdmxml/schemas/v2_1/message" xmlns:str="http://www.sdmx.org/resources/sdmxml/schemas/v2_1/structure">
+  <mes:Header>
+    <mes:ID>DF_PACCOMTRADE</mes:ID>
+    <mes:Test>false</mes:Test>
+    <mes:Prepared>2020-05-15T23:59:59.000Z</mes:Prepared>
+    <mes:Sender id="SPC"/>
+    <mes:Receiver id="UKN"/>
+  </mes:Header>
+  <mes:Structures>
+    <str:Codelists>
+      <str:Codelist agencyID="SPC" id="CL_COM_INCOTERMS" isFinal="false" urn="urn:sdmx:org.sdmx.infomodel.codelist.Codelist=SPC:CL_COM_INCOTERMS(1.0)" version="1.0">
+        <com:Name xml:lang="en">Common codelist for INCOTERMS</com:Name>
+        <com:Name xml:lang="fr">Liste de codes commune pour INCOTERMS</com:Name>
+        <str:Code id="_T" urn="urn:sdmx:org.sdmx.infomodel.codelist.Code=SPC:CL_COM_INCOTERMS(1.0)._T">
+          <com:Annotations>
+            <com:Annotation>
+              <com:AnnotationType>ORDER</com:AnnotationType>
+              <com:AnnotationText xml:lang="en">10</com:AnnotationText>
+              <com:AnnotationText xml:lang="fr">10</com:AnnotationText>
+            </com:Annotation>
+          </com:Annotations>
+          <com:Name xml:lang="en">Total</com:Name>
+          <com:Name xml:lang="fr">Total</com:Name>
+        </str:Code>
+        <str:Code id="CFR" urn="urn:sdmx:org.sdmx.infomodel.codelist.Code=SPC:CL_COM_INCOTERMS(1.0).CFR">
+          <com:Annotations>
+            <com:Annotation>
+              <com:AnnotationType>ORDER</com:AnnotationType>
+              <com:AnnotationText xml:lang="en">40</com:AnnotationText>
+              <com:AnnotationText xml:lang="fr">20</com:AnnotationText>
+            </com:Annotation>
+          </com:Annotations>
+          <com:Name xml:lang="en">Cost and Freight</com:Name>
+          <com:Name xml:lang="fr">Coût et fret</com:Name>
+        </str:Code>
+        <str:Code id="CIF" urn="urn:sdmx:org.sdmx.infomodel.codelist.Code=SPC:CL_COM_INCOTERMS(1.0).CIF">
+          <com:Annotations>
+            <com:Annotation>
+              <com:AnnotationType>ORDER</com:AnnotationType>
+              <com:AnnotationText xml:lang="en">50</com:AnnotationText>
+              <com:AnnotationText xml:lang="fr">30</com:AnnotationText>
+            </com:Annotation>
+          </com:Annotations>
+          <com:Name xml:lang="en">Cost Insurance and Freight</com:Name>
+          <com:Name xml:lang="fr">Coût, assurance et fret</com:Name>
+        </str:Code>
+        <str:Code id="CIP" urn="urn:sdmx:org.sdmx.infomodel.codelist.Code=SPC:CL_COM_INCOTERMS(1.0).CIP">
+          <com:Annotations>
+            <com:Annotation>
+              <com:AnnotationType>ORDER</com:AnnotationType>
+              <com:AnnotationText xml:lang="en">20</com:AnnotationText>
+              <com:AnnotationText xml:lang="fr">120</com:AnnotationText>
+            </com:Annotation>
+          </com:Annotations>
+          <com:Name xml:lang="en">Carriage and Insurance Paid To</com:Name>
+          <com:Name xml:lang="fr">Transport et assurance payés à</com:Name>
+        </str:Code>
+        <str:Code id="CPT" urn="urn:sdmx:org.sdmx.infomodel.codelist.Code=SPC:CL_COM_INCOTERMS(1.0).CPT">
+          <com:Annotations>
+            <com:Annotation>
+              <com:AnnotationType>ORDER</com:AnnotationType>
+              <com:AnnotationText xml:lang="en">30</com:AnnotationText>
+              <com:AnnotationText xml:lang="fr">80</com:AnnotationText>
+            </com:Annotation>
+          </com:Annotations>
+          <com:Name xml:lang="en">Carriage Paid to</com:Name>
+          <com:Name xml:lang="fr">Port payé jusqu'à</com:Name>
+        </str:Code>
+        <str:Code id="DAP" urn="urn:sdmx:org.sdmx.infomodel.codelist.Code=SPC:CL_COM_INCOTERMS(1.0).DAP">
+          <com:Annotations>
+            <com:Annotation>
+              <com:AnnotationType>ORDER</com:AnnotationType>
+              <com:AnnotationText xml:lang="en">60</com:AnnotationText>
+              <com:AnnotationText xml:lang="fr">90</com:AnnotationText>
+            </com:Annotation>
+          </com:Annotations>
+          <com:Name xml:lang="en">Delivered at Place</com:Name>
+          <com:Name xml:lang="fr">Rendu au lieu de destination</com:Name>
+        </str:Code>
+        <str:Code id="DDP" urn="urn:sdmx:org.sdmx.infomodel.codelist.Code=SPC:CL_COM_INCOTERMS(1.0).DDP">
+          <com:Annotations>
+            <com:Annotation>
+              <com:AnnotationType>ORDER</com:AnnotationType>
+              <com:AnnotationText xml:lang="en">90</com:AnnotationText>
+              <com:AnnotationText xml:lang="fr">100</com:AnnotationText>
+            </com:Annotation>
+          </com:Annotations>
+          <com:Name xml:lang="en">Delivered Duty Paid</com:Name>
+          <com:Name xml:lang="fr">Rendu droits acquittés</com:Name>
+        </str:Code>
+        <str:Code id="DDU" urn="urn:sdmx:org.sdmx.infomodel.codelist.Code=SPC:CL_COM_INCOTERMS(1.0).DDU">
+          <com:Annotations>
+            <com:Annotation>
+              <com:AnnotationType>ORDER</com:AnnotationType>
+              <com:AnnotationText xml:lang="en">120</com:AnnotationText>
+              <com:AnnotationText xml:lang="fr">110</com:AnnotationText>
+            </com:Annotation>
+          </com:Annotations>
+          <com:Name xml:lang="en">Delivered Duty Unpaid</com:Name>
+          <com:Name xml:lang="fr">Rendu droits non-acquittés</com:Name>
+        </str:Code>
+        <str:Code id="DPU" urn="urn:sdmx:org.sdmx.infomodel.codelist.Code=SPC:CL_COM_INCOTERMS(1.0).DPU">
+          <com:Annotations>
+            <com:Annotation>
+              <com:AnnotationType>ORDER</com:AnnotationType>
+              <com:AnnotationText xml:lang="en">150</com:AnnotationText>
+              <com:AnnotationText xml:lang="fr">120</com:AnnotationText>
+            </com:Annotation>
+          </com:Annotations>
+          <com:Name xml:lang="en">Delivered at Place Unloaded</com:Name>
+          <com:Name xml:lang="fr">Livré sur place déchargé</com:Name>
+        </str:Code>
+        <str:Code id="EXW" urn="urn:sdmx:org.sdmx.infomodel.codelist.Code=SPC:CL_COM_INCOTERMS(1.0).EXW">
+          <com:Annotations>
+            <com:Annotation>
+              <com:AnnotationType>ORDER</com:AnnotationType>
+              <com:AnnotationText xml:lang="en">180</com:AnnotationText>
+              <com:AnnotationText xml:lang="fr">130</com:AnnotationText>
+            </com:Annotation>
+          </com:Annotations>
+          <com:Name xml:lang="en">Ex Works</com:Name>
+          <com:Name xml:lang="fr">Sortie d'usine</com:Name>
+        </str:Code>
+        <str:Code id="FAS" urn="urn:sdmx:org.sdmx.infomodel.codelist.Code=SPC:CL_COM_INCOTERMS(1.0).FAS">
+          <com:Annotations>
+            <com:Annotation>
+              <com:AnnotationType>ORDER</com:AnnotationType>
+              <com:AnnotationText xml:lang="en">210</com:AnnotationText>
+              <com:AnnotationText xml:lang="fr">140</com:AnnotationText>
+            </com:Annotation>
+          </com:Annotations>
+          <com:Name xml:lang="en">Free Alongside Ship</com:Name>
+          <com:Name xml:lang="fr">Franco le long du navire</com:Name>
+        </str:Code>
+        <str:Code id="FCA" urn="urn:sdmx:org.sdmx.infomodel.codelist.Code=SPC:CL_COM_INCOTERMS(1.0).FCA">
+          <com:Annotations>
+            <com:Annotation>
+              <com:AnnotationType>ORDER</com:AnnotationType>
+              <com:AnnotationText xml:lang="en">240</com:AnnotationText>
+              <com:AnnotationText xml:lang="fr">150</com:AnnotationText>
+            </com:Annotation>
+          </com:Annotations>
+          <com:Name xml:lang="en">Free Carrier</com:Name>
+          <com:Name xml:lang="fr">Franco transporteur</com:Name>
+        </str:Code>
+        <str:Code id="FOB" urn="urn:sdmx:org.sdmx.infomodel.codelist.Code=SPC:CL_COM_INCOTERMS(1.0).FOB">
+          <com:Annotations>
+            <com:Annotation>
+              <com:AnnotationType>ORDER</com:AnnotationType>
+              <com:AnnotationText xml:lang="en">270</com:AnnotationText>
+              <com:AnnotationText xml:lang="fr">160</com:AnnotationText>
+            </com:Annotation>
+          </com:Annotations>
+          <com:Name xml:lang="en">Free on Board</com:Name>
+          <com:Name xml:lang="fr">Franco à bord</com:Name>
+        </str:Code>
+      </str:Codelist>
+    </str:Codelists>
+  </mes:Structures>
+</mes:Structure>

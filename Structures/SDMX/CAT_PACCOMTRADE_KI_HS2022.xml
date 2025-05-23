@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<mes:Structure xmlns:mes="http://www.sdmx.org/resources/sdmxml/schemas/v2_1/message" xmlns:str="http://www.sdmx.org/resources/sdmxml/schemas/v2_1/structure" xmlns:com="http://www.sdmx.org/resources/sdmxml/schemas/v2_1/common">
+  <mes:Header>
+    <mes:ID>DF_PACCOMTRADE_KI_HS2022</mes:ID>
+    <mes:Test>false</mes:Test>
+    <mes:Prepared>2020-05-15T23:59:59.000Z</mes:Prepared>
+    <mes:Sender id="SPC"/>
+    <mes:Receiver id="UKN"/>
+  </mes:Header>
+  <mes:Structures>
+    <str:Categorisations>
+      <str:Categorisation id="CAT_PACCOMTRADE_KI_HS2022" urn="urn:sdmx:org.sdmx.infomodel.categoryscheme.Categorisation=SPC:CAT_PACCOMTRADE_KI_HS2022(1.0)" agencyID="SPC" version="1.0" isFinal="false">
+        <com:Name xml:lang="en">Categorisation for DF_PACCOMTRADE_KI_HS2022</com:Name>
+        <str:Source>
+          <Ref id="DF_PACCOMTRADE_KI_HS2022" version="1.0" agencyID="SPC" package="datastructure" class="Dataflow"/>
+        </str:Source>
+        <str:Target>
+          <Ref id="ECO" maintainableParentID="CAS_COM_TOPIC" maintainableParentVersion="1.0" agencyID="SPC" package="categoryscheme" class="Category"/>
+        </str:Target>
+      </str:Categorisation>
+    </str:Categorisations>
+  </mes:Structures>
+</mes:Structure>

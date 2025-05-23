@@ -1,0 +1,95 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<mes:Structure xmlns:com="http://www.sdmx.org/resources/sdmxml/schemas/v2_1/common" xmlns:mes="http://www.sdmx.org/resources/sdmxml/schemas/v2_1/message" xmlns:str="http://www.sdmx.org/resources/sdmxml/schemas/v2_1/structure">
+  <mes:Header>
+    <mes:ID>DF_PACCOMTRADE</mes:ID>
+    <mes:Test>false</mes:Test>
+    <mes:Prepared>2020-05-15T23:59:59.000Z</mes:Prepared>
+    <mes:Sender id="SPC"/>
+    <mes:Receiver id="UKN"/>
+  </mes:Header>
+  <mes:Structures>
+    <str:Codelists>
+      <str:Codelist agencyID="SPC" id="CL_COM_TRADE_AGREEMENT" isFinal="false" urn="urn:sdmx:org.sdmx.infomodel.codelist.Codelist=SPC:CL_COM_TRADE_AGREEMENT(1.0)" version="1.0">
+        <com:Name xml:lang="en">Common codelist for TRADE_AGREEMENT</com:Name>
+        <com:Name xml:lang="fr">Liste de codes commune pour TRADE_AGREEMENT</com:Name>
+        <str:Code id="_T" urn="urn:sdmx:org.sdmx.infomodel.codelist.Code=SPC:CL_COM_TRADE_AGREEMENT(1.0)._T">
+          <com:Annotations>
+            <com:Annotation>
+              <com:AnnotationType>ORDER</com:AnnotationType>
+              <com:AnnotationText xml:lang="en">10</com:AnnotationText>
+              <com:AnnotationText xml:lang="fr">10</com:AnnotationText>
+            </com:Annotation>
+          </com:Annotations>
+          <com:Name xml:lang="en">Total</com:Name>
+          <com:Name xml:lang="fr">Total</com:Name>
+        </str:Code>
+        <str:Code id="NONE" urn="urn:sdmx:org.sdmx.infomodel.codelist.Code=SPC:CL_COM_TRADE_AGREEMENT(1.0).NONE">
+          <com:Annotations>
+            <com:Annotation>
+              <com:AnnotationType>ORDER</com:AnnotationType>
+              <com:AnnotationText xml:lang="en">20</com:AnnotationText>
+              <com:AnnotationText xml:lang="fr">20</com:AnnotationText>
+            </com:Annotation>
+          </com:Annotations>
+          <com:Name xml:lang="en">No trade agreement</com:Name>
+          <com:Name xml:lang="fr">Pas d'accord commercial</com:Name>
+        </str:Code>
+        <str:Code id="MSG" urn="urn:sdmx:org.sdmx.infomodel.codelist.Code=SPC:CL_COM_TRADE_AGREEMENT(1.0).MSG">
+          <com:Annotations>
+            <com:Annotation>
+              <com:AnnotationType>ORDER</com:AnnotationType>
+              <com:AnnotationText xml:lang="en">30</com:AnnotationText>
+              <com:AnnotationText xml:lang="fr">30</com:AnnotationText>
+            </com:Annotation>
+          </com:Annotations>
+          <com:Name xml:lang="en">Melanesian Spearhead Group Trade Agreement</com:Name>
+          <com:Name xml:lang="fr">Accord Commercial du Groupe du Fer de Lance Mélanésien</com:Name>
+        </str:Code>
+        <str:Code id="PICTA" urn="urn:sdmx:org.sdmx.infomodel.codelist.Code=SPC:CL_COM_TRADE_AGREEMENT(1.0).PICTA">
+          <com:Annotations>
+            <com:Annotation>
+              <com:AnnotationType>ORDER</com:AnnotationType>
+              <com:AnnotationText xml:lang="en">40</com:AnnotationText>
+              <com:AnnotationText xml:lang="fr">40</com:AnnotationText>
+            </com:Annotation>
+          </com:Annotations>
+          <com:Name xml:lang="en">Pacific Island Countries Trade Agreement</com:Name>
+          <com:Name xml:lang="fr">Accord Commercial des Pays Insulaires du Pacifique</com:Name>
+        </str:Code>
+        <str:Code id="IEPA" urn="urn:sdmx:org.sdmx.infomodel.codelist.Code=SPC:CL_COM_TRADE_AGREEMENT(1.0).IEPA">
+          <com:Annotations>
+            <com:Annotation>
+              <com:AnnotationType>ORDER</com:AnnotationType>
+              <com:AnnotationText xml:lang="en">50</com:AnnotationText>
+              <com:AnnotationText xml:lang="fr">50</com:AnnotationText>
+            </com:Annotation>
+          </com:Annotations>
+          <com:Name xml:lang="en">Interim Economic Partnership Agreement</com:Name>
+          <com:Name xml:lang="fr">Accord de Partenariat Économique Intérimaire</com:Name>
+        </str:Code>
+        <str:Code id="SPARTECA" urn="urn:sdmx:org.sdmx.infomodel.codelist.Code=SPC:CL_COM_TRADE_AGREEMENT(1.0).SPARTECA">
+          <com:Annotations>
+            <com:Annotation>
+              <com:AnnotationType>ORDER</com:AnnotationType>
+              <com:AnnotationText xml:lang="en">60</com:AnnotationText>
+              <com:AnnotationText xml:lang="fr">60</com:AnnotationText>
+            </com:Annotation>
+          </com:Annotations>
+          <com:Name xml:lang="en">South Pacific Regional Trade and Economic Co-operation Agreement</com:Name>
+          <com:Name xml:lang="fr">Accord Régional de Coopération Commerciale et Économique du Pacifique Sud</com:Name>
+        </str:Code>
+        <str:Code id="PACERPLUS" urn="urn:sdmx:org.sdmx.infomodel.codelist.Code=SPC:CL_COM_TRADE_AGREEMENT(1.0).PACERPLUS">
+          <com:Annotations>
+            <com:Annotation>
+              <com:AnnotationType>ORDER</com:AnnotationType>
+              <com:AnnotationText xml:lang="en">70</com:AnnotationText>
+              <com:AnnotationText xml:lang="fr">70</com:AnnotationText>
+            </com:Annotation>
+          </com:Annotations>
+          <com:Name xml:lang="en">Pacific Agreement on Closer Economic Relations (PACER) Plus</com:Name>
+          <com:Name xml:lang="fr">Accord du Pacifique sur le Rapprochement Économique (PACER) Plus</com:Name>
+        </str:Code>
+      </str:Codelist>
+    </str:Codelists>
+  </mes:Structures>
+</mes:Structure>
