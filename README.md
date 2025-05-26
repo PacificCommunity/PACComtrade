@@ -36,6 +36,9 @@ Dictionnary of parameters by country represented by and ISO 3166-alpha2 code
 ### Collect
 
 TODO
+- Data collcted under DLA between national customs and SPC
+- ASYCUDAWorld repoting template
+- CSV fetched through API call
 
 ### Validate
 
@@ -71,7 +74,6 @@ TODO
 | R28         | Value in column INSURANCE_PAID is numeric                 | Error, corresponding records are excluded        |
 | R29         | Value in column QUANTITY is numeric                       | Error, corresponding records are excluded        |
 
-
 ### Aggregate
 
 TODO
@@ -79,13 +81,21 @@ TODO
 ### Publish
 
 TODO
+- Delete/reload all data when a month is processed
+- Data published under Creative Commons Attribution 4.0 International Public License
 
 ### Add metadata
 
 TODO
+- SDMX reference metadataset linked to each dataset
+- Date of data collection added to reference metadata for each months of data processed
 
 ### Orchestrate
 
 TODO
+- For list of countries specified in execution parameters
+- Last 3 month flagged as provisional
+- last 4 months processed, for month of execution M, M-4 becomes final, M-3 and M-2 are revised and M-1 is calculated for the first time.
+- 
 
 
