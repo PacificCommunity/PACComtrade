@@ -168,19 +168,6 @@
                 </str:PrimaryMeasure>
               </str:AttributeRelationship>
             </str:Attribute>
-            <str:Attribute id="DATA_SOURCE" urn="urn:sdmx:org.sdmx.infomodel.datastructure.DataAttribute=SPC:DSD_PACCOMTRADE_VU_HS2017(1.0).DATA_SOURCE" assignmentStatus="Conditional">
-              <str:ConceptIdentity>
-                <Ref id="DATA_SOURCE" maintainableParentID="CS_COMMON" maintainableParentVersion="2.0" agencyID="SPC" package="conceptscheme" class="Concept"/>
-              </str:ConceptIdentity>
-              <str:LocalRepresentation>
-                <str:TextFormat textType="String"/>
-              </str:LocalRepresentation>
-              <str:AttributeRelationship>
-                <str:PrimaryMeasure>
-                  <Ref id="OBS_VALUE"/>
-                </str:PrimaryMeasure>
-              </str:AttributeRelationship>
-            </str:Attribute>
             <str:Attribute id="OBS_COMMENT" urn="urn:sdmx:org.sdmx.infomodel.datastructure.DataAttribute=SPC:DSD_PACCOMTRADE_VU_HS2017(1.0).OBS_COMMENT" assignmentStatus="Conditional">
               <str:ConceptIdentity>
                 <Ref id="COMMENT" maintainableParentID="CS_COMMON" maintainableParentVersion="2.0" agencyID="SPC" package="conceptscheme" class="Concept"/>

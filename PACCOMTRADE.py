@@ -1,4 +1,4 @@
-    # ************************************************************************************************************************
+# ************************************************************************************************************************
 #   _____        _____ _____ ____  __  __ _______ _____            _____  ______ 
 #  |  __ \ /\   / ____/ ____/ __ \|  \/  |__   __|  __ \     /\   |  __ \|  ____|
 #  | |__) /  \ | |   | |   | |  | | \  / |  | |  | |__) |   /  \  | |  | | |__   
@@ -176,10 +176,14 @@ def workspace(PICT) :
 
     global workFolder
     global workFolderTS
+
+    workspaceFolder=f"{rootFolder}/Workspace"
+    if not os.path.exists(workspaceFolder):
+       os.makedirs(workspaceFolder)
     
     workFolderTS=datetime.now().strftime("%Y%m%d-%H%M%S")
 
-    workFolder=f"{rootFolder}/Workspace/{PICT}-{workFolderTS}"
+    workFolder=f"{workspaceFolder}/{PICT}-{workFolderTS}"
 
     os.mkdir(workFolder)
 
@@ -622,7 +626,6 @@ def process(data) :
         "UNIT_MEASURE", 
         "UNIT_MULT", 
         "OBS_STATUS", 
-        "DATA_SOURCE", 
         "OBS_COMMENT", 
         "CONF_STATUS"
     ]
@@ -743,7 +746,6 @@ def process(data) :
     log("INFO", f"Set attributes")
 
     nway["OBS_STATUS"]=""
-    nway["DATA_SOURCE"]=""
     nway["OBS_COMMENT"]=""
     nway["CONF_STATUS"]=""
 
@@ -755,7 +757,7 @@ def process(data) :
 
     nway["OBS_VALUE"]=nway["OBS_VALUE"].astype(np.int64)
 
-    nway=nway.groupby(["FREQ", "TIME_PERIOD", "GEO_PICT", "INDICATOR", "TRADE_FLOW","INCOTERMS", "COMMODITY", "COUNTERPART", "TRANSPORT", "TRADE_AGREEMENT"], as_index=False).agg({ "OBS_VALUE" : "sum", "UNIT_MEASURE" : "first", "UNIT_MULT" : "first", "OBS_STATUS" : "first", "DATA_SOURCE" : "first", "OBS_COMMENT" : "first", "CONF_STATUS" : "first" })
+    nway=nway.groupby(["FREQ", "TIME_PERIOD", "GEO_PICT", "INDICATOR", "TRADE_FLOW","INCOTERMS", "COMMODITY", "COUNTERPART", "TRANSPORT", "TRADE_AGREEMENT"], as_index=False).agg({ "OBS_VALUE" : "sum", "UNIT_MEASURE" : "first", "UNIT_MULT" : "first", "OBS_STATUS" : "first", "OBS_COMMENT" : "first", "CONF_STATUS" : "first" })
 
     log("INFO", f"NWAY table has "+str(nway.shape[0])+" rows")
 
@@ -791,7 +793,7 @@ def process(data) :
 
     part["TRADE_FLOW"]=part["TRADE_FLOW"].map(m)
 
-    part=part.groupby(["FREQ", "TIME_PERIOD", "GEO_PICT", "INDICATOR", "TRADE_FLOW","INCOTERMS", "COMMODITY", "COUNTERPART", "TRANSPORT", "TRADE_AGREEMENT"], as_index=False).agg({ "OBS_VALUE" : "sum", "UNIT_MEASURE" : "first", "UNIT_MULT" : "first", "OBS_STATUS" : "first", "DATA_SOURCE" : "first", "OBS_COMMENT" : "first", "CONF_STATUS" : "first" })
+    part=part.groupby(["FREQ", "TIME_PERIOD", "GEO_PICT", "INDICATOR", "TRADE_FLOW","INCOTERMS", "COMMODITY", "COUNTERPART", "TRANSPORT", "TRADE_AGREEMENT"], as_index=False).agg({ "OBS_VALUE" : "sum", "UNIT_MEASURE" : "first", "UNIT_MULT" : "first", "OBS_STATUS" : "first", "OBS_COMMENT" : "first", "CONF_STATUS" : "first" })
 
     cube=pd.concat([cube, part])
 
@@ -811,7 +813,7 @@ def process(data) :
 
     part["INCOTERMS"]="_T"
 
-    part=part.groupby(["FREQ", "TIME_PERIOD", "GEO_PICT", "INDICATOR", "TRADE_FLOW","INCOTERMS", "COMMODITY", "COUNTERPART", "TRANSPORT", "TRADE_AGREEMENT"], as_index=False).agg({ "OBS_VALUE" : "sum", "UNIT_MEASURE" : "first", "UNIT_MULT" : "first", "OBS_STATUS" : "first", "DATA_SOURCE" : "first", "OBS_COMMENT" : "first", "CONF_STATUS" : "first" })
+    part=part.groupby(["FREQ", "TIME_PERIOD", "GEO_PICT", "INDICATOR", "TRADE_FLOW","INCOTERMS", "COMMODITY", "COUNTERPART", "TRANSPORT", "TRADE_AGREEMENT"], as_index=False).agg({ "OBS_VALUE" : "sum", "UNIT_MEASURE" : "first", "UNIT_MULT" : "first", "OBS_STATUS" : "first", "OBS_COMMENT" : "first", "CONF_STATUS" : "first" })
 
     cube=pd.concat([cube, part])
 
@@ -831,7 +833,7 @@ def process(data) :
 
     part["COUNTERPART"]="_T"
 
-    part=part.groupby(["FREQ", "TIME_PERIOD", "GEO_PICT", "INDICATOR", "TRADE_FLOW","INCOTERMS", "COMMODITY", "COUNTERPART", "TRANSPORT", "TRADE_AGREEMENT"], as_index=False).agg({ "OBS_VALUE" : "sum", "UNIT_MEASURE" : "first", "UNIT_MULT" : "first", "OBS_STATUS" : "first", "DATA_SOURCE" : "first", "OBS_COMMENT" : "first", "CONF_STATUS" : "first" })
+    part=part.groupby(["FREQ", "TIME_PERIOD", "GEO_PICT", "INDICATOR", "TRADE_FLOW","INCOTERMS", "COMMODITY", "COUNTERPART", "TRANSPORT", "TRADE_AGREEMENT"], as_index=False).agg({ "OBS_VALUE" : "sum", "UNIT_MEASURE" : "first", "UNIT_MULT" : "first", "OBS_STATUS" : "first", "OBS_COMMENT" : "first", "CONF_STATUS" : "first" })
 
     cube=pd.concat([cube, part])
 
@@ -851,7 +853,7 @@ def process(data) :
 
     part["TRANSPORT"]="_T"
 
-    part=part.groupby(["FREQ", "TIME_PERIOD", "GEO_PICT", "INDICATOR", "TRADE_FLOW","INCOTERMS", "COMMODITY", "COUNTERPART", "TRANSPORT", "TRADE_AGREEMENT"], as_index=False).agg({ "OBS_VALUE" : "sum", "UNIT_MEASURE" : "first", "UNIT_MULT" : "first", "OBS_STATUS" : "first", "DATA_SOURCE" : "first", "OBS_COMMENT" : "first", "CONF_STATUS" : "first" })
+    part=part.groupby(["FREQ", "TIME_PERIOD", "GEO_PICT", "INDICATOR", "TRADE_FLOW","INCOTERMS", "COMMODITY", "COUNTERPART", "TRANSPORT", "TRADE_AGREEMENT"], as_index=False).agg({ "OBS_VALUE" : "sum", "UNIT_MEASURE" : "first", "UNIT_MULT" : "first", "OBS_STATUS" : "first", "OBS_COMMENT" : "first", "CONF_STATUS" : "first" })
 
     cube=pd.concat([cube, part])
 
@@ -871,7 +873,7 @@ def process(data) :
 
     part["TRADE_AGREEMENT"]="_T"
 
-    part=part.groupby(["FREQ", "TIME_PERIOD", "GEO_PICT", "INDICATOR", "TRADE_FLOW","INCOTERMS", "COMMODITY", "COUNTERPART", "TRANSPORT", "TRADE_AGREEMENT"], as_index=False).agg({ "OBS_VALUE" : "sum", "UNIT_MEASURE" : "first", "UNIT_MULT" : "first", "OBS_STATUS" : "first", "DATA_SOURCE" : "first", "OBS_COMMENT" : "first", "CONF_STATUS" : "first" })
+    part=part.groupby(["FREQ", "TIME_PERIOD", "GEO_PICT", "INDICATOR", "TRADE_FLOW","INCOTERMS", "COMMODITY", "COUNTERPART", "TRANSPORT", "TRADE_AGREEMENT"], as_index=False).agg({ "OBS_VALUE" : "sum", "UNIT_MEASURE" : "first", "UNIT_MULT" : "first", "OBS_STATUS" : "first", "OBS_COMMENT" : "first", "CONF_STATUS" : "first" })
 
     cube=pd.concat([cube, part])
 
@@ -907,7 +909,7 @@ def process(data) :
 
     hsl3["COMMODITY"]=hsl3["COMMODITY"].map(m)
 
-    hsl3=hsl3.groupby(["FREQ", "TIME_PERIOD", "GEO_PICT", "INDICATOR", "TRADE_FLOW","INCOTERMS", "COMMODITY", "COUNTERPART", "TRANSPORT", "TRADE_AGREEMENT"], as_index=False).agg({ "OBS_VALUE" : "sum", "UNIT_MEASURE" : "first", "UNIT_MULT" : "first", "OBS_STATUS" : "first", "DATA_SOURCE" : "first", "OBS_COMMENT" : "first", "CONF_STATUS" : "first" })
+    hsl3=hsl3.groupby(["FREQ", "TIME_PERIOD", "GEO_PICT", "INDICATOR", "TRADE_FLOW","INCOTERMS", "COMMODITY", "COUNTERPART", "TRANSPORT", "TRADE_AGREEMENT"], as_index=False).agg({ "OBS_VALUE" : "sum", "UNIT_MEASURE" : "first", "UNIT_MULT" : "first", "OBS_STATUS" : "first", "OBS_COMMENT" : "first", "CONF_STATUS" : "first" })
 
     # ADD CHAPTERS
 
@@ -919,7 +921,7 @@ def process(data) :
 
     hsl2["COMMODITY"]=hsl2["COMMODITY"].map(m)
 
-    hsl2=hsl2.groupby(["FREQ", "TIME_PERIOD", "GEO_PICT", "INDICATOR", "TRADE_FLOW","INCOTERMS", "COMMODITY", "COUNTERPART", "TRANSPORT", "TRADE_AGREEMENT"], as_index=False).agg({ "OBS_VALUE" : "sum", "UNIT_MEASURE" : "first", "UNIT_MULT" : "first", "OBS_STATUS" : "first", "DATA_SOURCE" : "first", "OBS_COMMENT" : "first", "CONF_STATUS" : "first" })
+    hsl2=hsl2.groupby(["FREQ", "TIME_PERIOD", "GEO_PICT", "INDICATOR", "TRADE_FLOW","INCOTERMS", "COMMODITY", "COUNTERPART", "TRANSPORT", "TRADE_AGREEMENT"], as_index=False).agg({ "OBS_VALUE" : "sum", "UNIT_MEASURE" : "first", "UNIT_MULT" : "first", "OBS_STATUS" : "first", "OBS_COMMENT" : "first", "CONF_STATUS" : "first" })
 
     # ADD SECTIONS
 
@@ -931,7 +933,7 @@ def process(data) :
 
     hsl1["COMMODITY"]=hsl1["COMMODITY"].map(m)
 
-    hsl1=hsl1.groupby(["FREQ", "TIME_PERIOD", "GEO_PICT", "INDICATOR", "TRADE_FLOW","INCOTERMS", "COMMODITY", "COUNTERPART", "TRANSPORT", "TRADE_AGREEMENT"], as_index=False).agg({ "OBS_VALUE" : "sum", "UNIT_MEASURE" : "first", "UNIT_MULT" : "first", "OBS_STATUS" : "first", "DATA_SOURCE" : "first", "OBS_COMMENT" : "first", "CONF_STATUS" : "first" })
+    hsl1=hsl1.groupby(["FREQ", "TIME_PERIOD", "GEO_PICT", "INDICATOR", "TRADE_FLOW","INCOTERMS", "COMMODITY", "COUNTERPART", "TRANSPORT", "TRADE_AGREEMENT"], as_index=False).agg({ "OBS_VALUE" : "sum", "UNIT_MEASURE" : "first", "UNIT_MULT" : "first", "OBS_STATUS" : "first", "OBS_COMMENT" : "first", "CONF_STATUS" : "first" })
 
     # ADD TOTAL
 
@@ -943,7 +945,7 @@ def process(data) :
 
     hsl0["COMMODITY"]=hsl0["COMMODITY"].map(m)
 
-    hsl0=hsl0.groupby(["FREQ", "TIME_PERIOD", "GEO_PICT", "INDICATOR", "TRADE_FLOW","INCOTERMS", "COMMODITY", "COUNTERPART", "TRANSPORT", "TRADE_AGREEMENT"], as_index=False).agg({ "OBS_VALUE" : "sum", "UNIT_MEASURE" : "first", "UNIT_MULT" : "first", "OBS_STATUS" : "first", "DATA_SOURCE" : "first", "OBS_COMMENT" : "first", "CONF_STATUS" : "first" })
+    hsl0=hsl0.groupby(["FREQ", "TIME_PERIOD", "GEO_PICT", "INDICATOR", "TRADE_FLOW","INCOTERMS", "COMMODITY", "COUNTERPART", "TRANSPORT", "TRADE_AGREEMENT"], as_index=False).agg({ "OBS_VALUE" : "sum", "UNIT_MEASURE" : "first", "UNIT_MULT" : "first", "OBS_STATUS" : "first", "OBS_COMMENT" : "first", "CONF_STATUS" : "first" })
 
     cube=pd.concat([cube, hsl3, hsl2, hsl1, hsl0])
 
@@ -1119,7 +1121,13 @@ def deletData(PICT, reportMonth) :
         "COMMODITY"                             : "",
         "COUNTERPART"                           : "",
         "TRANSPORT"                             : "",
-        "TRADE_AGREEMENT"                       : ""
+        "TRADE_AGREEMENT"                       : "",
+        "OBS_VALUE"                             : "",
+        "UNIT_MEASURE"                          : "",
+        "UNIT_MULT"                             : "",
+        "OBS_STATUS"                            : "",
+        "OBS_COMMENT"                           : "",
+        "CONF_STATUS"                           : ""       
     }
     
     delete=pd.DataFrame.from_records(record, index=[0])[record.keys()]
