@@ -95,7 +95,7 @@ Data aggregated on the dimensions of the dataset:
 
 ### Publish
 
-When a month of data is loaded to the .Stat Suiten, data previously present for that months is delete before reloading the complete month pof data ewly processed. This way data is fully replaced each time a month is executed.
+When a month of data is loaded to the .Stat Suite, data previously present for that months is deleted before reloading the complete month of newly processed data. This way data is fully replaced each time a month is executed.
 
 Data is published under the Creative Commons Attribution 4.0 International Public License.
 
