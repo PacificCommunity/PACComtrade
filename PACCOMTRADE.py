@@ -99,6 +99,8 @@ codelistFile=f"{rootFolder}/Structures/ALLOWEDCODES.xlsx"
 
 hierarchyFile=f"{rootFolder}/Structures/HIERARCHIES.xlsx"
 
+#Not really a future proof way of doing it.
+#In 2027 (= in 1.5 years) it will all fall apart)
 HSy={
     "2017" : "2017",
     "2018" : "2017",
@@ -200,7 +202,7 @@ def workspace(PICT) :
 # ************************************************************************************************************************
 
 def collect(reportMonth) :
-
+    #variable dataParts doesn't seem to get used at all??
     dataParts=[]
 
 # ************************************************************************************************************************
@@ -884,7 +886,9 @@ def process(data) :
 # ------------------------------------------------------------------------------------------------------------------------
 
     log("INFO", f"Calculate cube levels for COMMODITY")
-
+    #It seems like this is not future proof. I don't think this should be solved based on a lookup table with finited number of entries.
+    #but rather with programming logic... e.g. y=2017 if reportMonth[:4] < 2022 else 2022
+    # haven't checked if the data types are correct in above statement (int vs. str)... just wanted to illustrate the logic. 
     y=HSy.get(reportMonth[:4])
 
     # GET HS HIERARCHY
@@ -1014,7 +1018,10 @@ def metadata(reportMonth) :
 # ***********************************************************************************************************************
 
     log("INFO", f"Create metadata record for data source date")
-
+    
+    #It seems like this is not future proof. I don't think this should be solved based on a lookup table with finited number of entries.
+    #but rather with programming logic... e.g. y=2017 if reportMonth[:4] < 2022 else 2022
+    # haven't checked if the data types are correct in above statement (int vs. str)... just wanted to illustrate the logic. 
     y=HSy.get(reportMonth[:4])
 
     record={
@@ -1068,6 +1075,9 @@ def getKcToken() :
     
 def publish(fileName) :
 
+    #It seems like this is not future proof. I don't think this should be solved based on a lookup table with finited number of entries.
+    #but rather with programming logic... e.g. y=2017 if reportMonth[:4] < 2022 else 2022
+    # haven't checked if the data types are correct in above statement (int vs. str)... just wanted to illustrate the logic. 
     y=HSy.get(reportMonth[:4])
 
     dfag="SPC"
@@ -1106,6 +1116,9 @@ def deletData(PICT, reportMonth) :
 
     log("INFO", f"Deleting data for {PICT} {reportMonth}")
 
+    #It seems like this is not future proof. I don't think this should be solved based on a lookup table with finited number of entries.
+    #but rather with programming logic... e.g. y=2017 if reportMonth[:4] < 2022 else 2022
+    # haven't checked if the data types are correct in above statement (int vs. str)... just wanted to illustrate the logic. 
     y=HSy.get(reportMonth[:4])
   
     record={
@@ -1229,6 +1242,10 @@ reportMonths=[M1, M2, M3, M4]
 # Loop over countries and months and run the collect/validate/aggregate/publish process
 
 PICTs=["KI"]
+
+#Not sure hardcoding the month is a good idea...
+#shouldn't that be a command line parameter to the script or if omitted we grab it from the system time 
+#to take the month from when the script is executed.
 reportMonths=["2025-04"]
 
 for PICT in PICTs :
