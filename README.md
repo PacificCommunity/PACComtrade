@@ -117,7 +117,7 @@ Execution report is send to receipients listed in the secrets.josn file for a gi
 
 ### Orchestrate
 
-The list of countries for which the porcess is executed is specified in execution parameters, using ISO 3166-alpha2 code like this:
+The list of countries for which the process is executed is specified in execution parameters, using ISO 3166-alpha2 code like this:
 
 PICTs=["KI", "TO", "TV"]
 
