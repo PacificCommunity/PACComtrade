@@ -201,7 +201,6 @@ def workspace(PICT) :
 
 def collect(reportMonth) :
 
-    dataParts=[]
 
 # ************************************************************************************************************************
 # SET REPORTING DATES
@@ -976,10 +975,10 @@ def process(data) :
     log("INFO", f"Set observation status")
 
     d=date.today().replace(day=1)
-    M0=date.strftime(d-timedelta(days=0), "%Y-%m")
-    M1=date.strftime(d-timedelta(days=10), "%Y-%m")
-    M2=date.strftime(d-timedelta(days=40), "%Y-%m")
-    M3=date.strftime(d-timedelta(days=70), "%Y-%m")
+    M0=date.strftime(d, "%Y-%m")
+    M1=date.strftime(d-relativedelta(months=1), "%Y-%m")
+    M2=date.strftime(d-relativedelta(months=2), "%Y-%m")
+    M3=date.strftime(d-relativedelta(months=3), "%Y-%m")
 
     cube["OBS_STATUS"]=np.where(cube["TIME_PERIOD"].isin([M0, M1, M2, M3]), "P", cube["OBS_STATUS"])
 
@@ -1201,6 +1200,7 @@ def report(logs, errors) :
         server.login(SMTPUser, SMTPPassword)
         server.send_message(message)
 
+
 # ***********************************************************************************************************************
 #    ____  _____   _____ _    _ ______  _____ _______ _____         _______ ______ 
 #   / __ \|  __ \ / ____| |  | |  ____|/ ____|__   __|  __ \     /\|__   __|  ____|
@@ -1216,20 +1216,20 @@ def report(logs, errors) :
 PICTs=["KI", "TO", "TV", "VU"]
 
 # Months for which the process should be executed, the past 4 months
-
+# Instead of execution time one could also query .STAT about last recorded month
 d=date.today().replace(day=1)
-M0=date.strftime(d-timedelta(days=0), "%Y-%m")
-M1=date.strftime(d-timedelta(days=10), "%Y-%m")
-M2=date.strftime(d-timedelta(days=40), "%Y-%m")
-M3=date.strftime(d-timedelta(days=70), "%Y-%m")
-M4=date.strftime(d-timedelta(days=100), "%Y-%m")
+M0=date.strftime(d, "%Y-%m")
+M1=date.strftime(d-relativedelta(months=1), "%Y-%m")
+M2=date.strftime(d-relativedelta(months=2), "%Y-%m")
+M3=date.strftime(d-relativedelta(months=3), "%Y-%m")
+M4=date.strftime(d-relativedelta(months=4), "%Y-%m")
 
 reportMonths=[M1, M2, M3, M4]
 
 # Loop over countries and months and run the collect/validate/aggregate/publish process
 
-PICTs=["KI"]
-reportMonths=["2025-04"]
+#PICTs=["KI"]
+#reportMonths=["2025-04"]
 
 for PICT in PICTs :
 
