@@ -50,7 +50,7 @@ requests.packages.urllib3.disable_warnings()
 import numpy as np
 
 import pandas as pd
-
+import re
 import sys
 
 import json
@@ -1061,6 +1061,23 @@ def getKcToken() :
 
     return kcToken
 
+
+
+# ***********************************************************************************************************************
+# GET JOB STATUS
+# ***********************************************************************************************************************
+
+def get_execution_status(request_id, token):
+    url = f"https://stats-transfer-staging.pacificdata.org/3/status/request"
+    headers = {
+        'accept': 'application/json',
+        'Authorization': f'Bearer {token}',
+    }   
+    files = {'dataspace': (None, 'SPC1'),'id': (None, request_id)}
+    response = requests.post(url, headers=headers, files=files)
+    response.raise_for_status()
+    return response.json().get("executionStatus")
+
 # ***********************************************************************************************************************
 # UPLOAD SDMX FILE
 # ***********************************************************************************************************************
@@ -1096,6 +1113,25 @@ def publish(fileName) :
         
     else :
         log("INFO", "File successfully uploaded")
+        s_decoded = r.content.decode()
+        match = re.search(r'ID (\d+)', s_decoded)
+        if match:
+          id_number = int(match.group(1))
+          log("INFO", "Job ID is "+ id_number)
+
+          while True:
+            status = get_execution_status(id_number, kcToken)
+            log("INFO", "Current status: "+ status)
+
+            if status not in ["Queued", "InProgress"]:
+              log("INFO", "Execution completed with status: "+ status)
+            break
+
+            time.sleep(5)  # wait 5 seconds before checking again
+        else : 
+          log("ERROR", "Couldn't obtain the job ID for the delete job")
+
+
 
 # ***********************************************************************************************************************
 # DELETE DATA FOR GIVEN TIME_PERIOD
@@ -1213,7 +1249,7 @@ def report(logs, errors) :
 
 # Countries for which the process should be executed
 
-PICTs=["KI", "TO", "TV", "VU"]
+PICTs=["KI", "TO", "TV"]
 
 # Months for which the process should be executed, the past 4 months
 # Instead of execution time one could also query .STAT about last recorded month
@@ -1229,7 +1265,7 @@ reportMonths=[M1, M2, M3, M4]
 # Loop over countries and months and run the collect/validate/aggregate/publish process
 
 #PICTs=["KI"]
-#reportMonths=["2025-04"]
+#reportMonths=["2025-03"]
 
 for PICT in PICTs :
 
