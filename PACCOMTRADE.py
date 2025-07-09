@@ -57,6 +57,9 @@ import json
 
 import math
 
+from urllib.parse import urlparse
+
+
 from requests_toolbelt.multipart.encoder import MultipartEncoder
 
 import smtplib
@@ -1068,13 +1071,16 @@ def getKcToken() :
 # ***********************************************************************************************************************
 
 def get_execution_status(request_id, token):
-    url = f"https://stats-transfer-staging.pacificdata.org/3/status/request"
+    url = DSSImportAPI
+    parsed = urlparse(url)
+    base_url = f"{parsed.scheme}://{parsed.netloc}"
+    new_url = f"{base_url}/3/status/request"
     headers = {
         'accept': 'application/json',
         'Authorization': f'Bearer {token}',
     }   
-    files = {'dataspace': (None, 'SPC1'),'id': (None, request_id)}
-    response = requests.post(url, headers=headers, files=files)
+    files = {'dataspace': (None, DSSDataspace),'id': (None, request_id)}
+    response = requests.post(new_url, headers=headers, files=files)
     response.raise_for_status()
     return response.json().get("executionStatus")
 
@@ -1117,7 +1123,7 @@ def publish(fileName) :
         match = re.search(r'ID (\d+)', s_decoded)
         if match:
           id_number = int(match.group(1))
-          log("INFO", "Job ID is "+ id_number)
+          log("INFO", "Job ID is "+ str(id_number))
 
           while True:
             status = get_execution_status(id_number, kcToken)
@@ -1125,7 +1131,7 @@ def publish(fileName) :
 
             if status not in ["Queued", "InProgress"]:
               log("INFO", "Execution completed with status: "+ status)
-            break
+              break
 
             time.sleep(5)  # wait 5 seconds before checking again
         else : 
