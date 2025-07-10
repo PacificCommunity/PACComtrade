@@ -47,7 +47,7 @@
               </str:ConceptIdentity>
               <str:LocalRepresentation>
                 <str:Enumeration>
-                  <Ref id="CL_COM_GEO_PICT" version="2.0" agencyID="SPC" package="codelist" class="Codelist"/>
+                  <Ref id="CL_COM_GEO_AREA" version="3.0" agencyID="SPC" package="codelist" class="Codelist"/>
                 </str:Enumeration>
               </str:LocalRepresentation>
             </str:Dimension>
@@ -97,7 +97,7 @@
               </str:ConceptIdentity>
               <str:LocalRepresentation>
                 <str:Enumeration>
-                  <Ref id="CL_COM_GEO_AREA" version="2.0" agencyID="SPC" package="codelist" class="Codelist"/>
+                  <Ref id="CL_COM_GEO_AREA" version="3.0" agencyID="SPC" package="codelist" class="Codelist"/>
                 </str:Enumeration>
               </str:LocalRepresentation>
             </str:Dimension>

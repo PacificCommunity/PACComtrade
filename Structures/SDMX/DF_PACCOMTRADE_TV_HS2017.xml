@@ -28,12 +28,16 @@
             <com:AnnotationType>DEFAULT</com:AnnotationType>
           </com:Annotation>
           <com:Annotation>
-            <com:AnnotationTitle>PDH.STAT</com:AnnotationTitle>
+            <com:AnnotationTitle>PDH.STAT,ECONOMY,TRADE,TRADE FLOW,INCOTERMS,COMMODITY,COUNTERPART,TRANSPORT,TRADE AGREEMENT</com:AnnotationTitle>
             <com:AnnotationType>TAGS</com:AnnotationType>
           </com:Annotation>
+          <com:Annotation>
+            <com:AnnotationTitle>COUNTERPART:SPC:HCL_GEO_WORLD(1.0).HCL_GEO_WORLD</com:AnnotationTitle>
+            <com:AnnotationType>HIER_CONTEXT</com:AnnotationType>
+          </com:Annotation>
         </com:Annotations>
-        <com:Name xml:lang="en">Pacific Commodity Trade (PACComtrade) for Tuvalu</com:Name>
-        <com:Name xml:lang="fr">Commerce des marchandises du Pacifique (PACComtrade) pour Tuvalu en HS2017</com:Name>
+        <com:Name xml:lang="en">Pacific Commodity Trade Dataset for Tuvalu (PACComtrade, HS2017 Classification)</com:Name>
+        <com:Name xml:lang="fr">Données sur le commerce des marchandises dans le Pacifique pour Tuvalu (PACComtrade, classification HS2017)</com:Name>
         <com:Description xml:lang="en">The Pacific Customs Commodity Trade (PACComtrade) database gives data on merchandise trade sourced from SPC member countries’ Customs Administrations. The main benefit of this database is that users have access to data on commodities up to the 6-digit Harmonised Commodity Description and Coding System (HS) level. PACComtrade database supplement IMTS release tables and together they are serving different user needs. Although a series of caveats apply, the PACComtrade database will have a timelier release than the IMTS release tables as such the Government and the businesses engaged in trade will be able to plan better.</com:Description>
         <com:Description xml:lang="fr">La base de données Pacific Customs Commodity Trade (PACComtrade) fournit des données sur le commerce des marchandises provenant des administrations douanières des pays membres de la CPS. Le principal avantage de cette base de données est que les utilisateurs ont accès aux données sur les produits jusqu'au niveau à 6 chiffres du Système harmonisé de description et de codification des produits (SH). La base de données PACComtrade complète les tables de version IMTS et, ensemble, elles répondent aux différents besoins des utilisateurs. Bien qu'une série de mises en garde s'appliquent, la base de données PACComtrade sera publiée plus rapidement que les tableaux de publication IMTS, de sorte que le gouvernement et les entreprises engagées dans le commerce seront en mesure de mieux planifier.</com:Description>
         <str:Structure>
