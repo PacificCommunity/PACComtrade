@@ -163,9 +163,9 @@
                 </str:Enumeration>
               </str:LocalRepresentation>
               <str:AttributeRelationship>
-                <str:PrimaryMeasure>
-                  <Ref id="OBS_VALUE"/>
-                </str:PrimaryMeasure>
+                <str:Dimension>
+                  <Ref id="TIME_PERIOD"/>
+                </str:Dimension>
               </str:AttributeRelationship>
             </str:Attribute>
             <str:Attribute id="OBS_COMMENT" urn="urn:sdmx:org.sdmx.infomodel.datastructure.DataAttribute=SPC:DSD_PACCOMTRADE_TO_HS2017(1.0).OBS_COMMENT" assignmentStatus="Conditional">
