@@ -32,7 +32,7 @@
             <com:AnnotationType>TAGS</com:AnnotationType>
           </com:Annotation>
           <com:Annotation>
-            <com:AnnotationTitle>COUNTERPART:SPC:HCL_GEO_WORLD(1.0).HCL_GEO_WORLD</com:AnnotationTitle>
+            <com:AnnotationTitle>COUNTERPART:SPC:HCL_GEO_WORLD_CONTINENTS(1.0).HCL_GEO_WORLD_CONTINENTS</com:AnnotationTitle>
             <com:AnnotationType>HIER_CONTEXT</com:AnnotationType>
           </com:Annotation>
         </com:Annotations>
