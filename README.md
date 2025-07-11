@@ -69,7 +69,6 @@ For this purpose a specific ASYCUDAWorld repoting template is defined and data i
 | R11         | Missing value in column TRANSPORT                         | Error, corresponding records are excluded        |
 | R12         | Missing value in column TRADE_AGREEMENT                   | Error, corresponding records are excluded        |
 | R13         | Format of values in column DATE                           | Error, corresponding records are excluded        |
-| R14         | Validaty of HS classification version declared            | Error, corresponding records are excluded        |
 | R15         | Validity of commodity codes given HS version declared     | Warning, invalid codes are recoded to unknown    |
 | R16         | Validity of country codes for origin and destination      | Error, corresponding records are excluded        |
 | R17         | Country of destination for imports                        | Error, corresponding records are excluded        |
@@ -78,13 +77,11 @@ For this purpose a specific ASYCUDAWorld repoting template is defined and data i
 | R20         | Currency code for being processed country                 | Error, corresponding records are excluded        |
 | R21         | Allowed codes in column TRADE_FLOW                        | Error, corresponding records are excluded        |
 | R22         | Allowed codes in column INCOTERMS                         | Error, corresponding records are excluded        |
-| R23         | Allowed codes in column QUANTITY_UNIT                     | Error, corresponding records are excluded        |
 | R24         | Allowed codes in columnTRANSPORT                          | Error, corresponding records are excluded        |
 | R25         | Allowed codes in column TRADE_AGREEMENT                   | Error, corresponding records are excluded        |
 | R26         | Value in column VALUE is numeric                          | Error, corresponding records are excluded        |
 | R27         | Value in column FREIGHT_PAID is numeeic                   | Error, corresponding records are excluded        |
 | R28         | Value in column INSURANCE_PAID is numeric                 | Error, corresponding records are excluded        |
-| R29         | Value in column QUANTITY is numeric                       | Error, corresponding records are excluded        |
 
 ### Aggregate
 
