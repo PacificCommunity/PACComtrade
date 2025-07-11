@@ -415,22 +415,27 @@ def validate(data) :
 # - [R14] Validity of HS classification specified
 # ------------------------------------------------------------------------------------------------------------------------
 
-    log("INFO", "CHECK: Validity of HS classification specified")
+    # log("INFO", "CHECK: Validity of HS classification specified")
 
-    codes=pd.read_excel(codelistFile, sheet_name="COMMODITY_CLASSIFICATION", dtype=str, na_filter=False)["CODE"].tolist()
+    # codes=pd.read_excel(codelistFile, sheet_name="COMMODITY_CLASSIFICATION", dtype=str, na_filter=False)["CODE"].tolist()
 
-    bitMask=~data["COMMODITY_CLASSIFICATION"].isin(codes)
+    # bitMask=~data["COMMODITY_CLASSIFICATION"].isin(codes)
 
-    data, dataErrors=applyMask(data, bitMask, f"Invalid code in column COMMODITY_CLASSIFICATION", dataErrors)
+    # data, dataErrors=applyMask(data, bitMask, f"Invalid code in column COMMODITY_CLASSIFICATION", dataErrors)
 
 # ------------------------------------------------------------------------------------------------------------------------
 # - [R15] Validity of commodity codes in the HS classification specified
 # ------------------------------------------------------------------------------------------------------------------------
 
+    # Truncate HS codes in dataset to 6 digits
+
     data.loc[:, "COMMODITY"]=data["COMMODITY"].str[:6]
 
-    hss=data["COMMODITY_CLASSIFICATION"].unique().tolist()
+    # Get HS version to be used for validation
 
+    y=getHSversion(reportMonth[:4])
+
+    hs=f"HS{y}"
 
     # PREPROCESSING STEP: Recodes HS codes starting with 93 or 99 to OTH
 
@@ -458,37 +463,35 @@ def validate(data) :
 
     # -----
 
-    for hs in hss :
+    log("INFO", f"CHECK: Validity of commodity codes in {hs}")
 
-        log("INFO", f"CHECK: Validity of commodity codes in {hs}")
+    codes=pd.read_excel(codelistFile, sheet_name=hs, dtype=str, na_filter=False)
 
-        codes=pd.read_excel(codelistFile, sheet_name=hs, dtype=str, na_filter=False)
+    codes=codes[codes["LVL"]=="4"]["CODE"].tolist()
 
-        codes=codes[codes["LVL"]=="4"]["CODE"].tolist()
+    codes.append("OTH")
+    
+    bitMask=((data["COMMODITY_CLASSIFICATION"]==hs) & ~(data["COMMODITY"].isin(codes)))
 
-        codes.append("OTH")
-        
-        bitMask=((data["COMMODITY_CLASSIFICATION"]==hs) & ~(data["COMMODITY"].isin(codes)))
+    err=data[bitMask].copy()
 
-        err=data[bitMask].copy()
+    n=err.shape[0]
+   
+    if (n>0) :
 
-        n=err.shape[0]
-       
-        if (n>0) :
+        log("ERROR", f"       {n} row(s) with invalid {hs} COMMODITY recoded to UNKNOWN")
 
-            log("ERROR", f"       {n} row(s) with invalid {hs} COMMODITY recoded to UNKNOWN")
+        err["MESSAGE"]=f"Invalid {hs} COMMODITY"
 
-            err["MESSAGE"]=f"Invalid {hs} COMMODITY"
+        dataErrors=pd.concat([dataErrors, err])
 
-            dataErrors=pd.concat([dataErrors, err])
+        data.loc[bitMask, "COMMODITY"]="_U"
 
-            data.loc[bitMask, "COMMODITY"]="_U"
+        log("INFO", f"       Dataset has now {data.shape[0]} rows")
 
-            log("INFO", f"       Dataset has now {data.shape[0]} rows")
+    else :
 
-        else :
-
-            log("INFO", f"       OK")
+        log("INFO", f"       OK")
             
 # ************************************************************************************************************************
 # CHECK: Country codes
@@ -554,7 +557,7 @@ def validate(data) :
 # CHECK [R21-R25] : Other coded columns
 # ************************************************************************************************************************
 
-    checkCols=["TRADE_FLOW", "INCOTERMS", "QUANTITY_UNIT", "TRANSPORT", "TRADE_AGREEMENT"]
+    checkCols=["TRADE_FLOW", "INCOTERMS", "TRANSPORT", "TRADE_AGREEMENT"]
 
     for col in checkCols :
 
@@ -570,7 +573,7 @@ def validate(data) :
 # CHECK [R26-R29]: Numeric columns
 # ************************************************************************************************************************
 
-    checkCols=["VALUE", "FREIGHT_PAID", "INSURANCE_PAID", "QUANTITY"]
+    checkCols=["VALUE", "FREIGHT_PAID", "INSURANCE_PAID"]
 
     for col in checkCols :
 
@@ -1065,8 +1068,6 @@ def getKcToken() :
     kcToken=r.json()["access_token"]
 
     return kcToken
-
-
 
 # ***********************************************************************************************************************
 # GET JOB STATUS
