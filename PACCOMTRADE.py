@@ -102,18 +102,7 @@ codelistFile=f"{rootFolder}/Structures/ALLOWEDCODES.xlsx"
 
 hierarchyFile=f"{rootFolder}/Structures/HIERARCHIES.xlsx"
 
-HSy={
-    "2017" : "2017",
-    "2018" : "2017",
-    "2019" : "2017",
-    "2020" : "2017",
-    "2021" : "2017",
-    "2022" : "2022",
-    "2023" : "2022",
-    "2024" : "2022",
-    "2025" : "2022",
-    "2026" : "2022"
-}
+
 
 # ************************************************************************************************************************
 #  __          ______  _____  _  __ _____ _____        _____ ______ 
@@ -151,6 +140,7 @@ def workspace(PICT) :
     global SMTPUser
     global SMTPPassword
     global SMTPRecipients
+    global HSCodeAssignement
         
     with open(secretsFile) as f :
 
@@ -170,7 +160,8 @@ def workspace(PICT) :
         SMTPUser=secrets.get("SMTPUser")
         SMTPPassword=secrets.get("SMTPPassword")
         SMTPRecipients=secrets.get("SMTPRecipients")
-        
+        HSCodeAssignement=secrets.get("HSCodeAssignement")
+
 # ************************************************************************************************************************
 # SETUP WORKSPACE
 # ************************************************************************************************************************
@@ -191,6 +182,18 @@ def workspace(PICT) :
     os.mkdir(workFolder)
 
     logTable=pd.DataFrame(columns=["ts", "lvl", "msg"])
+
+def getHSversion(year):
+    try:
+        code_versions = HSCodeAssignement["CodeVersions"]
+    except KeyError:
+        raise ValueError(f"No version data found for key: {key}")
+    for entry in code_versions:
+        start = int(entry["start"])
+        end = int(entry["end"]) if "end" in entry and entry["end"] is not None else float('inf')
+        if start <= int(year) <= end:
+            return entry["version"]
+    raise ValueError(f"No version found for {key} in year {year}")
 
 # ************************************************************************************************************************
 #    _____ ____  _      _      ______ _____ _______ 
@@ -884,10 +887,9 @@ def process(data) :
 # ------------------------------------------------------------------------------------------------------------------------
 # COMMODITY 
 # ------------------------------------------------------------------------------------------------------------------------
-
     log("INFO", f"Calculate cube levels for COMMODITY")
 
-    y=HSy.get(reportMonth[:4])
+    y=getHSversion(reportMonth[:4])
 
     # GET HS HIERARCHY
 
@@ -1017,7 +1019,7 @@ def metadata(reportMonth) :
 
     log("INFO", f"Create metadata record for data source date")
 
-    y=HSy.get(reportMonth[:4])
+    y=getHSversion(reportMonth[:4])
 
     record={
         "STRUCTURE"                             : "DATAFLOW",
@@ -1090,7 +1092,7 @@ def get_execution_status(request_id, token):
     
 def publish(fileName) :
 
-    y=HSy.get(reportMonth[:4])
+    y=getHSversion(reportMonth[:4])
 
     dfag="SPC"
     dfid=f"DF_PACCOMTRADE_{PICT}_HS{y}"
@@ -1147,7 +1149,7 @@ def deletData(PICT, reportMonth) :
 
     log("INFO", f"Deleting data for {PICT} {reportMonth}")
 
-    y=HSy.get(reportMonth[:4])
+    y=getHSversion(reportMonth[:4])
   
     record={
         "STRUCTURE"                             : "DATAFLOW",
