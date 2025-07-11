@@ -31,6 +31,7 @@ Dictionnary of of dictionnaries, first level identifying the country to which pa
 | SMTPUser              | Userid of the account used to send email notifications.                                                                                                                                                              |
 | SMTPPassword          | Password of the account used to send email notifications.                                                                                                                                                            |
 | SMTPRecipients        | Addresses to which email notifications should be sent.                                                                                                                                                               |
+| HSCodeAssignement     | Start and End years for when Entities used certain versions of HS code (e.g. HS2017 vs. HS2022)                                                                                                                      |
 
 ### Structures
 
