@@ -74,7 +74,7 @@ from email import encoders
 
 log("INFO", "Set global parameters")
 
-rootFolder="."
+rootFolder="/home/sddadmin/scripts/Paccomtrade"
 
 secretsFile=f"{rootFolder}/secrets.json"
 
@@ -1214,7 +1214,7 @@ def report(logs, errors) :
 
     # Message header
     message["From"]=SMTPUser
-    message["To"]=SMTPRecipients
+    message["To"]=", ".join(SMTPRecipients)
     message["Subject"]=f"PACComtrade process executed: {PICT} {reportMonth}"
 
     # Message body
