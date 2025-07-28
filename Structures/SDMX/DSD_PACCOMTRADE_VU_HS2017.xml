@@ -173,7 +173,7 @@
                 <Ref id="COMMENT" maintainableParentID="CS_COMMON" maintainableParentVersion="2.0" agencyID="SPC" package="conceptscheme" class="Concept"/>
               </str:ConceptIdentity>
               <str:LocalRepresentation>
-                <str:TextFormat textType="String"/>
+                <str:TextFormat maxLength="4000" textType="String"/>
               </str:LocalRepresentation>
               <str:AttributeRelationship>
                 <str:PrimaryMeasure>
